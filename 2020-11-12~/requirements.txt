@@ -1,0 +1,6 @@
+pydub
+scipy
+librosa
+plotly
+jupyter
+numpy
