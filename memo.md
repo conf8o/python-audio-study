@@ -1,6 +1,6 @@
 ## Jupyter Notebookで音声データを扱う
 
-音声データはfloatとかintの配列だから多分NumPyでも扱える。
+音声データはint16の配列だから多分NumPyでも扱える。
 
 対話的にいじることができれば良さそうなのでJupyter Notebookが使えれば良さそう。
 
