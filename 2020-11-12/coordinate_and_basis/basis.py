@@ -16,7 +16,7 @@ class Basis:
         return self.basis_mat.dot(vec)
     
     def plot_coordinate(self, p, n=10):
-        assert self.dimension == 2, "method 'space_figure' is implemented for only 2 dimension."
+        assert self.dimension == 2, "method 'plot_coordinate' is implemented for only 2-dimension."
 
         plt.xlim(0, n)
         plt.ylim(0, n)
