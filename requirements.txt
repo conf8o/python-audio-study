@@ -1,6 +1,6 @@
 pydub
 scipy
 librosa
-plotly
+matplotlib
 jupyter
 numpy
