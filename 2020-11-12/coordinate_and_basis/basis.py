@@ -37,4 +37,4 @@ class Basis:
             ys = np.linspace(start[1], end[1])
             plt.plot(xs, ys, color="#AAAAAA")
 
-        plt.plot(*p, marker="o")
+        plt.plot(*self.coordinate(p), marker="o")
