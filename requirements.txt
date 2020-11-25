@@ -3,4 +3,5 @@ scipy
 librosa
 matplotlib
 jupyter
+jupyter-contrib-nbextensions
 numpy
