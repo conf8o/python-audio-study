@@ -31,7 +31,7 @@ requirements.txtは根に置いて随時必要なライブラリを更新して�
 Jupyter Notebook は HTML に変換し、外出ししたPythonコードと一緒にまとめる。GitHub Pagesを使うが最新の状態を維持したい(mainだと少ない)ため、別リポジトリにまとめる。
 
 * リポジトリ: https://github.com/conf8o/python-audio-study-notebooks
-* Web: https://conf8o.github.io/python-audio-study-notebooks/ 
+* Website: https://conf8o.github.io/python-audio-study-notebooks/ 
 
 ### 変換ツール
 
