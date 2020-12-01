@@ -26,6 +26,17 @@ requirements.txtは根に置いて随時必要なライブラリを更新して�
 
 日付ごとにブランチを切り、区切りの良いタイミングでプルリクエストを行う。
 
+## ノートやソース
+
+Jupyter Notebook は HTML に変換し、外出ししたPythonコードと一緒にまとめる。GitHub Pagesを使うが最新の状態を維持したい(mainだと少ない)ため、別リポジトリにまとめる。
+
+* リポジトリ: https://github.com/conf8o/python-audio-study-notebooks
+* Web: https://conf8o.github.io/python-audio-study-notebooks/ 
+
+### 変換ツール
+
+* https://github.com/conf8o/clj-nbconvert
+
 ## 勉強中書籍
 
 概念を大切にする微積分―1変数
