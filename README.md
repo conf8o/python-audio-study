@@ -8,7 +8,7 @@ https://github.com/conf8o/speech-bubble-recognition
 
 ## 目標
 
-Jypter Notebook + NumPy で音声データを加工し、保存する。
+Jypter Notebook、各種ライブラリを使って音声データを加工し、保存する。
 
 音声の特徴とかが出るようなデータになれば最高
 
@@ -37,7 +37,7 @@ Jupyter Notebook は HTML に変換し、外出ししたPythonコードと一緒
 
 * https://github.com/conf8o/clj-nbconvert
 
-## 勉強中書籍
+## 参考書籍
 
 概念を大切にする微積分―1変数
 
