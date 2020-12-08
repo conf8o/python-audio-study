@@ -30,7 +30,7 @@ requirements.txtは根に置いて随時必要なライブラリを更新して�
 
 Jupyter Notebook は HTML に変換し、外出ししたPythonコードと一緒にまとめる。
 
-* Website: https://conf8o.github.io/python-audio-study-notebooks/ 
+* Website: https://conf8o.github.io/python-audio-study/ 
 
 ### 変換ツール
 
