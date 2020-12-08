@@ -1,4 +1,4 @@
-* doc
+* docs
     * [音声分析.html](.\音声分析.html)
     * 2020-11-12
         * [free.html](.\2020-11-12\free.html)

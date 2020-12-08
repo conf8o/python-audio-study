@@ -3,8 +3,8 @@
 
 (def windows-os? (clojure.string/includes? (System/getProperty "os.name") "Windows"))
 
-(def base "../doc")
-(def base-re (if windows-os? #"\.\.\\doc" #"\.\./doc"))
+(def base "../docs")
+(def base-re (if windows-os? #"\.\.\\docs" #"\.\./docs"))
 
 (defn has-extension? [path extension]
   (boolean
