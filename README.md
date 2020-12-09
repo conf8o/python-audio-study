@@ -35,6 +35,7 @@ Jupyter Notebook は HTML に変換し、外出ししたPythonコードと一緒
 ### 変換ツール
 
 * https://github.com/conf8o/clj-nbconvert
+* https://github.com/conf8o/notebook
 
 ## 参考書籍
 
