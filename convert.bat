@@ -1,5 +1,5 @@
 cd ..\clj-nbconvert && ^
 lein run && ^
-cd ..\python-audio-study\notebook && ^
+cd ..\studying-speech-analysis\notebook && ^
 lein run all && ^
 cd ..
