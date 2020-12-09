@@ -1,3 +1,0 @@
-# notebook
-
-HTMLやPythonコードなどをdocsにコピーするツール
