@@ -58,13 +58,17 @@ def fft(w, s):
                            [f0[j] + w**(n/2+j)*f1[j] for j in range(n//2)]])
 ```
 
-SPL.py
+highpathfilter.py
 ```py
 import numpy as np
 
-def spl(p):
-    p0 = 20 * (10**6)
-    return 20 * np.log10(p/p0)
+def high_path_filter(a, fs):
+    def h(f):
+        w = 2 * np.pi * f / fs
+        z = np.exp(-1j * w)
+        return 1 - a * z
+
+    return h
 
 ```
 
@@ -79,4 +83,14 @@ def mel_scale(f0):
         return m0 * np.log10(f / f0 + 1.0)
 
     return mel_scaled
+```
+
+SPL.py
+```py
+import numpy as np
+
+def spl(p):
+    p0 = 20 * (10**6)
+    return 20 * np.log10(p/p0)
+
 ```

@@ -2,3 +2,8 @@
 __pycache__
 .DS_Store
 notebook
+/*.html
+2020-11-12/*.html
+2020-11-12/*/*.html
+2020-11-26/*.html
+2020-11-26/*/*.html

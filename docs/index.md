@@ -35,6 +35,7 @@ Jupyter Notebook は HTML に変換し、外出ししたPythonコードと一緒
 ### 変換ツール
 
 * https://github.com/conf8o/clj-nbconvert
+* https://github.com/conf8o/notebook
 
 ## 参考書籍
 
@@ -51,25 +52,27 @@ scikit-learnとTensorFlowによる実践機械学習
 ---
 
 * docs
-    * [音声分析.html](./音声分析.html)
+    * [音声分析.html](.\音声分析.html)
     * 2020-11-12
-        * [free.html](./2020-11-12/free.html)
+        * [free.html](.\2020-11-12\free.html)
         * coordinate_and_basis
-            * [座標と基底.html](./2020-11-12/coordinate_and_basis/座標と基底.html)
+            * [座標と基底.html](.\2020-11-12\coordinate_and_basis\座標と基底.html)
         * fft
-            * [高速フーリエ変換.html](./2020-11-12/fft/高速フーリエ変換.html)
+            * [高速フーリエ変換.html](.\2020-11-12\fft\高速フーリエ変換.html)
         * sin
-            * [sin直交性.html](./2020-11-12/sin/sin直交性.html)
+            * [sin直交性.html](.\2020-11-12\sin\sin直交性.html)
         * stopwatch
-            * [正弦波の重み付き和としての信号.html](./2020-11-12/stopwatch/正弦波の重み付き和としての信号.html)
+            * [正弦波の重み付き和としての信号.html](.\2020-11-12\stopwatch\正弦波の重み付き和としての信号.html)
     * 2020-11-26
+        * high_frequency_emphasis
+            * [高域強調.html](.\2020-11-26\high_frequency_emphasis\高域強調.html)
         * math_functions
-            * [関数の感覚.html](./2020-11-26/math_functions/関数の感覚.html)
+            * [関数の感覚.html](.\2020-11-26\math_functions\関数の感覚.html)
         * sound
-            * [メル尺度.html](./2020-11-26/sound/メル尺度.html)
-            * [音圧レベル.html](./2020-11-26/sound/音圧レベル.html)
+            * [メル尺度.html](.\2020-11-26\sound\メル尺度.html)
+            * [音圧レベル.html](.\2020-11-26\sound\音圧レベル.html)
         * window_function
-            * [窓関数.html](./2020-11-26/window_function/窓関数.html)
+            * [窓関数.html](.\2020-11-26\window_function\窓関数.html)
 
 ---
 
@@ -133,13 +136,17 @@ def fft(w, s):
                            [f0[j] + w**(n/2+j)*f1[j] for j in range(n//2)]])
 ```
 
-SPL.py
+highpathfilter.py
 ```py
 import numpy as np
 
-def spl(p):
-    p0 = 20 * (10**6)
-    return 20 * np.log10(p/p0)
+def high_path_filter(a, fs):
+    def h(f):
+        w = 2 * np.pi * f / fs
+        z = np.exp(-1j * w)
+        return 1 - a * z
+
+    return h
 
 ```
 
@@ -154,4 +161,14 @@ def mel_scale(f0):
         return m0 * np.log10(f / f0 + 1.0)
 
     return mel_scaled
+```
+
+SPL.py
+```py
+import numpy as np
+
+def spl(p):
+    p0 = 20 * (10**6)
+    return 20 * np.log10(p/p0)
+
 ```
