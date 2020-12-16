@@ -109,3 +109,22 @@ def sin_wave(k: int, rate: int, ms: int):
     xs = np.linspace(0, ms / 1000, rate * ms // 1000)
     w = 2 * np.pi * k
     return np.sin(xs * w)
+
+def stft(a, frame_length, step_length, window):
+    """短時間フーリエ変換
+    
+    step_length(ms)ごとに、オーディオデータ(a)をフレーム長(frame_length(ms))の範囲で切り取っていき、
+    それぞれに窓関数(window)を適用し、高速フーリエ変換する。
+
+    Args:
+        a (Audio): オーディオ
+        frame_length (int): フレーム長(ミリ秒)
+        step_length (int): ずらす長さ(ミリ秒)
+        window (numpy.ndarray[numpy.float64]): 窓関数
+    """
+    
+    for frame in a.each_frame(frame_length, step_length):
+        windowed = frame * window
+        ffted = np.fft.fft(windowed)
+        
+        yield ffted
