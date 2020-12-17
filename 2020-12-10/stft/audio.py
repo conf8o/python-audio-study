@@ -2,12 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import itertools
 
-def time_axis(ary, rate: int):
+def time_axis(ary, rate: np.float64) -> np.ndarray:
     """NumPy配列とサンプリング周波数から時間軸を取得する。
 
     Args:
         ary (numpy.ndarray[int16]): 任意の配列
-        rate (int): サンプリング周波数
+        rate (numpy.float64): サンプリング周波数
 
     Returns:
         numpy.ndarray[numpy.float64]: aryと同じ要素数を持つ時間軸
@@ -25,7 +25,7 @@ class Audio:
         times (numpy.ndarray[numpy.int16]): 時間軸
     """
     
-    def __init__(self, rate: int, data):
+    def __init__(self, rate: int, data: np.ndarray):
         self.data = data
         self.rate = rate
         self.times = time_axis(self.data, self.rate)
