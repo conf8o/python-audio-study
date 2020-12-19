@@ -44,7 +44,7 @@ Jupyter Notebook は HTML に変換し、外だししたPythonコードと一緒
 
 * Website: https://conf8o.github.io/studying-speech-analysis
 
-2020-12-17より、ライブラリとして使えるソースは"speelysis"(https://github.com/conf8o/speelysis.git)にまとめる。
+2020-12-17より、ライブラリとして使えるソースは"speelysis"(https://github.com/conf8o/speelysis )にまとめる。
 
 ### 変換ツール
 
