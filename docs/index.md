@@ -44,6 +44,8 @@ Jupyter Notebook は HTML に変換し、外だししたPythonコードと一緒
 
 * Website: https://conf8o.github.io/studying-speech-analysis
 
+2020-12-17より、ライブラリとして使えるソースは"speelysis"(https://github.com/conf8o/speelysis.git)にまとめる。
+
 ### 変換ツール
 
 * https://github.com/conf8o/clj-nbconvert
@@ -86,6 +88,11 @@ Jupyter Notebook は HTML に変換し、外だししたPythonコードと一緒
             * [短時間フーリエ変換のためのコード.html](./2020-12-10/stft/短時間フーリエ変換のためのコード.html)
             * [音声の短時間フーリエ変換.html](./2020-12-10/stft/音声の短時間フーリエ変換.html)
             * [高域強調から短時間フーリエ変換.html](./2020-12-10/stft/高域強調から短時間フーリエ変換.html)
+    * 2020-12-17
+        * cepstrum
+            * [ケプストラム特徴量.html](./2020-12-17/cepstrum/ケプストラム特徴量.html)
+        * melfilterbank
+            * [メルフィルタバンク.html](./2020-12-17/melfilterbank/メルフィルタバンク.html)
 
 ---
 
