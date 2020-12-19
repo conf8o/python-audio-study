@@ -89,8 +89,10 @@ Jupyter Notebook は HTML に変換し、外だししたPythonコードと一緒
             * [音声の短時間フーリエ変換.html](./2020-12-10/stft/音声の短時間フーリエ変換.html)
             * [高域強調から短時間フーリエ変換.html](./2020-12-10/stft/高域強調から短時間フーリエ変換.html)
     * 2020-12-17
-        * log
-            * [メルフィルタバンク.html](./2020-12-17/log/メルフィルタバンク.html)
+        * cepstrum
+            * [ケプストラム特徴量.html](./2020-12-17/cepstrum/ケプストラム特徴量.html)
+        * melfilterbank
+            * [メルフィルタバンク.html](./2020-12-17/melfilterbank/メルフィルタバンク.html)
 
 ---
 
