@@ -62,23 +62,13 @@ highpathfilter.py
 ```py
 import numpy as np
 
-def high_path_filter(a, fs):
+def high_pass_filter(a, fs):
     def h(f):
         w = 2 * np.pi * f / fs
         z = np.exp(-1j * w)
         return 1 - a * z
 
     return h
-
-```
-
-SPL.py
-```py
-import numpy as np
-
-def spl(p):
-    p0 = 20 * (10**6)
-    return 20 * np.log10(p/p0)
 
 ```
 
@@ -93,6 +83,16 @@ def mel_scale(f0):
         return m0 * np.log10(f / f0 + 1.0)
 
     return mel_scaled
+```
+
+SPL.py
+```py
+import numpy as np
+
+def spl(p):
+    p0 = 20 * (10**6)
+    return 20 * np.log10(p/p0)
+
 ```
 
 window_function.py
@@ -240,11 +240,11 @@ class Audio:
             yield self.data[i:i+n_frame]
             i += step
 
-    def high_path_filtered(self):
-        return Audio(self.rate, high_path_filter(self.data))
+    def high_pass_filtered(self):
+        return Audio(self.rate, high_pass_filter(self.data))
 
 
-def high_path_filter(data, a=0.97):
+def high_pass_filter(data, a=0.97):
     n = len(data)
     y = [None] * n
     y[0] = data[0]

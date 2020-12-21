@@ -56,11 +56,11 @@ class Audio:
             yield self.data[i:i+n_frame]
             i += step
 
-    def high_path_filtered(self):
-        return Audio(self.rate, high_path_filter(self.data))
+    def high_pass_filtered(self):
+        return Audio(self.rate, high_pass_filter(self.data))
 
 
-def high_path_filter(data, a=0.97):
+def high_pass_filter(data, a=0.97):
     n = len(data)
     y = [None] * n
     y[0] = data[0]

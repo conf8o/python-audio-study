@@ -14261,7 +14261,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="&#12465;&#12503;&#12473;&#12488;&#12521;&#12512;&#29305;&#24500;&#37327;(&#12513;&#12523;&#21608;&#27874;&#25968;&#12465;&#12503;&#12473;&#12488;&#12521;&#12512;&#20418;&#25968;(MFCC))">&#12465;&#12503;&#12473;&#12488;&#12521;&#12512;&#29305;&#24500;&#37327;(&#12513;&#12523;&#21608;&#27874;&#25968;&#12465;&#12503;&#12473;&#12488;&#12521;&#12512;&#20418;&#25968;(MFCC))<a class="anchor-link" href="#&#12465;&#12503;&#12473;&#12488;&#12521;&#12512;&#29305;&#24500;&#37327;(&#12513;&#12523;&#21608;&#27874;&#25968;&#12465;&#12503;&#12473;&#12488;&#12521;&#12512;&#20418;&#25968;(MFCC))">&#182;</a></h2><p>メルフィルタバンクの工程で取得した特徴量(パワースペクトル)は、声門波と声道のインパルス応答の畳み込み和である。音声認識に必要なのは後者なので、これをパワースペクトルから取り出す。</p>
 <ol>
-<li>パワースペクトルの対数を逆離散コサイン変換する。この結果はケフレンシーと呼ばれる。</li>
+<li>パワースペクトルの対数を離散コサイン変換する。この結果はケフレンシーと呼ばれる。</li>
 <li>ケフレンシーのうち声門波の成分は高ケフレンシーの領域に、インパルス応答の成分は低ケフレンシーの領域に現れる。なので低ケフレンシー領域を取り出す。(低い方から10~15次元)</li>
 </ol>
 
@@ -14292,7 +14292,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">audio</span> <span class="o">=</span> <span class="n">sly</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="o">*</span><span class="n">wav</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;../resources/aiueo.wav&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">high_path_filtered</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">audio</span> <span class="o">=</span> <span class="n">sly</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="o">*</span><span class="n">wav</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;../resources/aiueo.wav&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">high_pass_filtered</span><span class="p">()</span>
 <span class="n">_</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">sly</span><span class="o">.</span><span class="n">frame_candidates</span><span class="p">(</span><span class="n">audio</span><span class="o">.</span><span class="n">rate</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
 <span class="n">step_length</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">rate</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">//</span> <span class="mi">1000</span>
 <span class="n">stfted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">librosa</span><span class="o">.</span><span class="n">stft</span><span class="p">(</span><span class="n">audio</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">step_length</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span>
